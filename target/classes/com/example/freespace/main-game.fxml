@@ -5,16 +5,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="800.0" style="-fx-background-image: url(&quot;C:\Users\Anubys\IdeaProjects\FreeSpace\src\main\resources\img\fondo&quot;);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressedMoveShip" prefHeight="612.0" prefWidth="800.0" style="-fx-background-image: url(&quot;C:\Users\Anubys\IdeaProjects\FreeSpace\src\main\resources\img\fondo&quot;);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.freespace.controllers.MainGame">
    <children>
       <ImageView fitHeight="581.0" fitWidth="800.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/fondo.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="asteroideIMG" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../img/asteroide2.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="naveIMG" fitHeight="91.0" fitWidth="122.0" layoutX="60.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
@@ -22,6 +17,16 @@
             <Image url="@../../../img/nave1.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="46.0" layoutY="452.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="64.0" text="GO" />
+      <Button fx:id="btnGo" layoutX="46.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#onMouseClickMoveShip" prefHeight="26.0" prefWidth="64.0" text="GO" />
+      <ImageView fx:id="asteroideIMG" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/asteroide2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="asteroideIMG2" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/asteroide2.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
