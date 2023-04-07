@@ -8,7 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.KeyEvent;
-
+import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,6 +19,8 @@ public class MainGame extends Thread implements Initializable {
         private Button btnGo;
         @FXML
         private ImageView naveIMG;
+        @FXML
+        private Label lblMenssage;
         Ship ship;
         Meteor meteoro_1,meteoro_2,meteoro_3;
 
@@ -67,7 +69,7 @@ public class MainGame extends Thread implements Initializable {
                 meteoro_3.setY(-7);
                 int ramdom = ramdonNumber(1,3);
                 ramdom = 3;
-
+                lblMenssage.setVisible(false);
                 if(ramdom == 1){
                         meteoro_1.print("meteoro 1");
                         meteoro_1.start();
@@ -102,8 +104,8 @@ public class MainGame extends Thread implements Initializable {
                         if( ((diferencia >= 0) && (diferencia < 4 )) ){
 
                                 //ImageView
-                                naveIMG.setImage(new Image("C:\\Users\\doney\\IdeaProjects\\FreeSpace\\src\\main\\resources\\img\\explocionNave.jpg"));
-
+                                naveIMG.setImage(new Image("C:\\Users\\Anubys\\IdeaProjects\\FreeSpace\\src\\main\\resources\\img\\explocionNave.jpg"));
+                                lblMenssage.setVisible(true);
                                 ship.stop();
                                 meteoro_1.stop();
                                 //meteor.resetData();
@@ -121,8 +123,8 @@ public class MainGame extends Thread implements Initializable {
                         if( ((diferencia >= 13) && (diferencia < 16 )) ){
 
                                 //ImageView
-                                naveIMG.setImage(new Image("C:\\Users\\doney\\IdeaProjects\\FreeSpace\\src\\main\\resources\\img\\explocionNave.jpg"));
-
+                                naveIMG.setImage(new Image("C:\\Users\\Anubys\\IdeaProjects\\FreeSpace\\src\\main\\resources\\img\\explocionNave.jpg"));
+                                lblMenssage.setVisible(true);
                                 ship.stop();
                                 meteoro_2.stop();
                                 //meteor.resetData();
@@ -139,8 +141,8 @@ public class MainGame extends Thread implements Initializable {
                         if( ((diferencia >= 13) && (diferencia < 16)) ){
 
                                 //ImageView
-                                naveIMG.setImage(new Image("C:\\Users\\doney\\IdeaProjects\\FreeSpace\\src\\main\\resources\\img\\explocionNave.jpg"));
-
+                                naveIMG.setImage(new Image("C:\\Users\\Anubys\\IdeaProjects\\FreeSpace\\src\\main\\resources\\img\\explocionNave.jpg"));
+                                lblMenssage.setVisible(true);
                                 ship.stop();
                                 meteoro_3.stop();
                                 //meteor.resetData();
@@ -148,6 +150,24 @@ public class MainGame extends Thread implements Initializable {
                         }
                 }
 
+        }
+
+        private synchronized void inizialiteShip(){
+                int number = this.ramdonNumber(1,3);
+                if(number == 1){
+                        meteoro_1 = new Meteor(asteroideIMG1);
+                        meteoro_1.start();
+                }
+                if(number == 2){
+                        meteoro_2 = new Meteor(asteroideIMG2);
+                        meteoro_2.setY(7);
+                        meteoro_2.start();
+                }
+                if(number == 3){
+                        meteoro_3 = new Meteor(asteroideIMG3);
+                        meteoro_3.setY(-7);
+                        meteoro_3.start();
+                }
         }
 
         @Override
@@ -163,27 +183,15 @@ public class MainGame extends Thread implements Initializable {
 
 
                         if(meteoro_3.getSteps()>=96){
-                                meteoro_2 = new Meteor(asteroideIMG2);
-                                meteoro_2.setY(7);
-                                meteoro_2.start();
+                                this.inizialiteShip();
                         }
 
                         if(meteoro_2.getSteps()>=96){
-                                if(this.ramdonNumber(1,2) == 1){
-                                        meteoro_1 = new Meteor(asteroideIMG1);
-                                        meteoro_1.start();
-                                }else{
-                                        meteoro_3 = new Meteor(asteroideIMG3);
-                                        meteoro_3.setY(-7);
-                                        meteoro_3.start();
-                                }
-
+                                this.inizialiteShip();
                         }
 
                         if(meteoro_1.getSteps()>=96){
-                                meteoro_3 = new Meteor(asteroideIMG3);
-                                meteoro_3.setY(-7);
-                                meteoro_3.start();
+                                this.inizialiteShip();
                         }
 
                 }
