@@ -18,12 +18,17 @@
          </image>
       </ImageView>
       <Button fx:id="btnGo" layoutX="46.0" layoutY="468.0" mnemonicParsing="false" onMouseClicked="#onMouseClickMoveShip" prefHeight="26.0" prefWidth="64.0" text="GO" />
-      <ImageView fx:id="asteroideIMG" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="asteroideIMG1" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/asteroide2.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="asteroideIMG2" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/asteroide2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="asteroideIMG3" fitHeight="69.0" fitWidth="57.0" layoutX="703.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../img/asteroide2.jpg" />
          </image>

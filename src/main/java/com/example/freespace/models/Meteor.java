@@ -45,9 +45,27 @@ public class Meteor extends Thread{
     public int getY(){
         return this.Y;
     }
+    public int getSteps(){
+        return this.steps;
+    }
+    public void setX(int X){
+        this.X = X;
+    }
 
+    public void setY(int Y){
+        this.Y = Y;
+    }
+
+    public void setVisible(boolean value){
+        asteroideIMG.setVisible(value);
+    }
+
+    public void print(String value){
+        System.out.println(value);
+    }
     @Override
     public void run(){
+        /*
         while(true){
 
             try {
@@ -55,10 +73,11 @@ public class Meteor extends Thread{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
+*/
         while(this.steps != 97){
 
             this.steps++;
+            //System.out.println(steps);
             try {
                 sleep(this.millis);
             } catch (InterruptedException e) {
@@ -71,8 +90,9 @@ public class Meteor extends Thread{
             this.X++;
         }
             this.steps = 0;
-            this.resetData(1000);
+            this.resetData(900);
             this.initializeDataMeteor();
-        }
+
+        //}
     }
 }

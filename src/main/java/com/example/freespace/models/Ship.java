@@ -34,7 +34,7 @@ public class Ship extends Thread{
         this.contStepsDown = 0;
         this.limitUp = 9;
         this.limitDown = 9;
-        this.X = 129;
+        this.X = 130;
         this.Y = 0;
     }
 
